@@ -30,7 +30,7 @@ class AuthTextFormField extends StatelessWidget {
         controller: mycontroller,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         validator: validator,
-        style: TextStyle(
+        style: const TextStyle(
           color: AppColor.primaryColor, // Change typing color here
         ),
         decoration: InputDecoration(

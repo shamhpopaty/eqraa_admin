@@ -1,7 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,7 +12,6 @@ import '../../../core/constant/imageassets.dart';
 import '../../../widgets/auth/custom_button_auth.dart';
 import '../../../widgets/auth/custom_text_body_auth.dart';
 import '../../../widgets/auth/custom_text_form.dart';
-import '../../../widgets/auth/custom_title_auth.dart';
 import '../controller/forgotpassword_controller.dart';
 
 class ForgotPassword extends StatelessWidget {
@@ -49,7 +47,7 @@ class ForgotPassword extends StatelessWidget {
                   child: Column(
                     children: [
                       const Image(image: AssetImage(AppImageAssets.forgotpassword),),
-                          SizedBox(
+                          const SizedBox(
                             height: 75,
                           ),
                       //const CustomTitleAuth(title: "Forgot Password"),

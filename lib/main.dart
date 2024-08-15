@@ -1,7 +1,5 @@
 // import 'package:device_preview/device_preview.dart';
 
-import 'package:eqraa/presentation/Auth/view/login.dart';
-import 'package:eqraa/presentation/admin_home/view/admin_home.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:eqraa/core/app_export.dart';
@@ -40,7 +38,7 @@ class eqraa_admin extends StatelessWidget {
           theme: controller.appTheme,
           //routes: routes,
           // home: BookManagerPage(),
-          home: const Login(),
+          // home: const Login(),
           getPages: routes,
           initialBinding: InitialBindings(),
         ),

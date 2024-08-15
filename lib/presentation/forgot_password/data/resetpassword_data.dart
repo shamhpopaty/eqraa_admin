@@ -8,12 +8,12 @@ class ResetPasswordData {
   postdata(
     String code,
     String password,
-      String password_confirmation,
+      String passwordConfirmation,
   ) async {
     var response = await crud.postData(AppLink.resetPassword, {
       "code": code,
       "password": password,
-      "password_confirmation":password_confirmation,
+      "password_confirmation":passwordConfirmation,
     });
     return response.fold((l) => l, (r) => r);
   }

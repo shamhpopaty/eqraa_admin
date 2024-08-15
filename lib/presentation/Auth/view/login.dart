@@ -5,7 +5,6 @@ import 'package:eqraa/core/class/status_request.dart';
 import 'package:eqraa/core/constant/color.dart';
 import 'package:eqraa/core/functions/alert_exit_app.dart';
 import 'package:eqraa/core/functions/valid_input.dart';
-import 'package:eqraa/presentation/forgot_password/screens/forgotpassword.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../widgets/auth/custom_button_auth.dart';
@@ -16,7 +15,6 @@ import '../../../widgets/auth/custom_text_form.dart';
 import '../../../widgets/auth/custom_title_auth.dart';
 import '../../../widgets/auth/logo_auth.dart';
 import '../../../widgets/auth/no_account_auth.dart';
-import '../../forgot_password/screens/forgotpassword.dart';
 import '../controller/login_controller.dart';
 
 class Login extends StatelessWidget {

@@ -8,7 +8,7 @@ class SkipButton extends StatelessWidget {
   final String text;
   final void Function()? onTap;
 
-  SkipButton({super.key, required this.text, this.onTap});
+  const SkipButton({super.key, required this.text, this.onTap});
 
   @override
   Widget build(BuildContext context) {

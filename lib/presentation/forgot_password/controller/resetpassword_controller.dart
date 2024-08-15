@@ -4,7 +4,6 @@ import 'package:cool_alert/cool_alert.dart';
 import 'package:eqraa/core/app_export.dart';
 
 import 'package:flutter/cupertino.dart';
-import 'package:get/get.dart';
 
 import '../../../core/class/status_request.dart';
 import '../../../core/constant/color.dart';

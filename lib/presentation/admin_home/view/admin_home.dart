@@ -1,8 +1,6 @@
-import 'dart:io';
-
+import 'package:eqraa/core/constant/apptheme.dart';
+import 'package:eqraa/core/constant/color.dart';
 import 'package:flutter/material.dart';
-import 'package:file_picker/file_picker.dart';
-import 'package:flutter_pdfview/flutter_pdfview.dart';
 
 import '../../add_book/view/add_book.dart';
 import '../../categories/view/categories.dart';
@@ -10,6 +8,8 @@ import '../../popular_books/view/popular_books.dart';
 import '../../user_complaints/view/user_complaints.dart';
 
 class BookManagerPage extends StatefulWidget {
+  const BookManagerPage({super.key});
+
   @override
   _BookManagerPageState createState() => _BookManagerPageState();
 }
@@ -21,26 +21,50 @@ class _BookManagerPageState extends State<BookManagerPage> {
       length: 4,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Eqraa_Admin', style: TextStyle(color: Color(0xff424530))),
+          title: Center(
+            child: Text(
+              'Eqraa Admin',
+              style: MyTextStyle.title.copyWith(color: AppColor.white),
+            ),
+          ),
           bottom: TabBar(
-            indicatorColor: Color(0xffE09132), // لون المؤشر عند التحديد
-            labelColor: Color(0xffE09132), // لون النص عند التحديد
-            unselectedLabelColor: Colors.grey, // لون النص عند عدم التحديد
+            indicatorColor: AppColor.secondColor, // لون المؤشر عند التحديد
+            labelColor: AppColor.secondColor, // لون النص عند التحديد
+            unselectedLabelColor: AppColor.gray, // لون النص عند عدم التحديد
             tabs: [
-              Tab(text: 'Categories'),
-              Tab(text: 'Add Book'),
-              Tab(text: 'Popular Books'),
-              Tab(text: 'User Complaints'),
+              Tab(
+                child: Text(
+                  "Categories",
+                  style: MyTextStyle.bodySmall.copyWith(color: AppColor.white),
+                ),
+              ),
+              Tab(
+                child: Text(
+                  "Add Book",
+                  style: MyTextStyle.bodySmall.copyWith(color: AppColor.white),
+                ),
+              ),
+              Tab(
+                child: Text(
+                  "Popular Books",
+                  style: MyTextStyle.bodySmall.copyWith(color: AppColor.white),
+                ),
+              ),
+              Tab(
+                child: Text(
+                  "User Complaints",
+                  style: MyTextStyle.bodySmall.copyWith(color: AppColor.white),
+                ),
+              ),
             ],
           ),
         ),
         body: TabBarView(
           children: [
             CategoriesPage(),
-            AddBookPage(),
-            PopularBooksPage(),
-            UserComplaints(),
-
+            const AddBookPage(),
+            const PopularBooksPage(),
+            const UserComplaints(),
           ],
         ),
       ),
@@ -57,5 +81,3 @@ class Book {
 
   Book(this.name, this.author, this.description, this.pdfPath, this.imagePath);
 }
-
-

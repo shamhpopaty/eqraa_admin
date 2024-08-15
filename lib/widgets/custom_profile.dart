@@ -2,13 +2,12 @@ import 'package:eqraa/core/app_export.dart';
 import 'package:eqraa/core/class/handlingdataview.dart';
 import 'package:eqraa/core/constant/color.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import '../presentation/my_profile/controller/my_profile_controller.dart';
 import 'custom_container_profile.dart';
 import 'custom_editing_profile.dart';
 
 class Custom_Profile extends StatelessWidget {
-  Custom_Profile({super.key});
+  const Custom_Profile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +36,7 @@ class Custom_Profile extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             Text(
-              '${controller.userProfile.value.user?.name ?? ''}',
+              controller.userProfile.value.user?.name ?? '',
               style: const TextStyle(
                 color: AppColor.primaryColor,
                 fontWeight: FontWeight.bold,
@@ -59,7 +58,7 @@ class Custom_Profile extends StatelessWidget {
               padding: const EdgeInsets.only(top: 8, bottom: 8),
               child: Column(
                 children: [
-                  Container(
+                  SizedBox(
                     height: 50,
                     width: 300,
                     child: Row(
@@ -87,7 +86,7 @@ class Custom_Profile extends StatelessWidget {
                     ),
                   ),
                   const Divider(),
-                  Container(
+                  SizedBox(
                     height: 50,
                     width: 400,
                     child: Row(

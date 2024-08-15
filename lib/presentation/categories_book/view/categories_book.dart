@@ -5,7 +5,7 @@ import '../../book_datails/view/book_datails.dart';
 class CategoryBooksPage extends StatelessWidget {
   final String category;
 
-  CategoryBooksPage({required this.category});
+  const CategoryBooksPage({super.key, required this.category});
 
   @override
   Widget build(BuildContext context) {
@@ -53,8 +53,8 @@ class CategoryBooksPage extends StatelessWidget {
               );
             },
             child: Container(
-              margin: EdgeInsets.all(10),
-              padding: EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
@@ -75,19 +75,19 @@ class CategoryBooksPage extends StatelessWidget {
                     height: 50,
                     fit: BoxFit.cover,
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   Expanded(
                     child: Text(book.name),
                   ),
                   IconButton(
-                    icon: Icon(Icons.edit),
-                    color: Color(0xffA68E74),
+                    icon: const Icon(Icons.edit),
+                    color: const Color(0xffA68E74),
                     onPressed: () {
                       // إضافة كود التعديل هنا
                     },
                   ),
                   IconButton(
-                    icon: Icon(Icons.delete),
+                    icon: const Icon(Icons.delete),
                     color: Colors.red,
                     onPressed: () {
                       // إضافة كود الحذف هنا

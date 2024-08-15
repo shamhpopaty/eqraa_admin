@@ -7,11 +7,11 @@ import 'color.dart';
 
 ThemeData get theme => ThemeData();
 ThemeData themeEnglish = ThemeData(
-  appBarTheme: AppBarTheme(
+  appBarTheme: const AppBarTheme(
     backgroundColor: AppColor.primaryColor,
     foregroundColor: AppColor.white,
   ),
-  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: AppColor.white,
     elevation: 5,
     selectedItemColor: AppColor.primaryColor,
@@ -167,7 +167,7 @@ class MyTextStyle {
   );
   static TextStyle bodySmall = theme.textTheme.headlineMedium!.copyWith(
     color: AppColor.gray,
-    fontSize: 16,
+    fontSize: 15,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w400,
   );

@@ -39,18 +39,18 @@ class Book_Modele {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['title'] = this.title;
-    data['category'] = this.category;
-    data['author'] = this.author;
-    data['description'] = this.description;
-    data['rating'] = this.rating;
-    data['cover'] = this.cover;
-    data['path'] = this.path;
-    data['number_of_pages'] = this.numberOfPages;
-    data['created_at'] = this.createdAt;
-    data['updated_at'] = this.updatedAt;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['title'] = title;
+    data['category'] = category;
+    data['author'] = author;
+    data['description'] = description;
+    data['rating'] = rating;
+    data['cover'] = cover;
+    data['path'] = path;
+    data['number_of_pages'] = numberOfPages;
+    data['created_at'] = createdAt;
+    data['updated_at'] = updatedAt;
     return data;
   }
 }

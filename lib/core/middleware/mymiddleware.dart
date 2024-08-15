@@ -13,7 +13,7 @@ class MyMiddleware extends GetMiddleware {
   RouteSettings? redirect(String? route) {
     /// IF USER LOGGED IN, WHEN HE OPEN THE APP LATER GO TO HOMEPAGE DIRECTLY WITHOUT RE SIGN IN
     if (myServices.sharedPreferences.getString("step") == "2") {
-      return const RouteSettings(name: AppRoutes.homePage);
+      return const RouteSettings(name: AppRoutes.homeAdmin);
     }
     if (myServices.sharedPreferences.getString("step") == "1") {
       return const RouteSettings(name: AppRoutes.login);

@@ -1,24 +1,23 @@
-
 import 'package:flutter/services.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
 
 class BookListScreen extends StatelessWidget {
-  final List<Book> books = [
-    Book('Book 1', 'assets/pdf/doaa.pdf'),
-    Book('Book 2', 'assets/pdf/sera.pdf'),
-    Book('Book 3', 'assets/pdf/hart.pdf'),
-  ];
+  const BookListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final List<Book> books = [
+      Book('Book 1', 'assets/pdf/doaa.pdf'),
+      Book('Book 2', 'assets/pdf/sera.pdf'),
+      Book('Book 3', 'assets/pdf/hart.pdf'),
+    ];
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Books'),
+        title: const Text('Books'),
       ),
       body: ListView.builder(
         itemCount: books.length,
@@ -50,7 +49,7 @@ class Book {
 class BookDetailScreen extends StatefulWidget {
   final Book book;
 
-  BookDetailScreen({required this.book});
+  const BookDetailScreen({super.key, required this.book});
 
   @override
   _BookDetailScreenState createState() => _BookDetailScreenState();
@@ -89,11 +88,10 @@ class _BookDetailScreenState extends State<BookDetailScreen> {
         title: Text(widget.book.title),
       ),
       body: localPath != null
-
           ? PDFView(
-        filePath: localPath,
-      )
-          : Center(child: CircularProgressIndicator()),
+              filePath: localPath,
+            )
+          : const Center(child: CircularProgressIndicator()),
     );
   }
 }

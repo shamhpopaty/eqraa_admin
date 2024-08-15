@@ -11,7 +11,7 @@ class CustomTitleHome extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColor.primaryColor),

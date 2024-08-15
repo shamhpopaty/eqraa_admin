@@ -3,7 +3,7 @@ import 'package:eqraa/core/constant/color.dart';
 import '../../core/app_export.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  CustomTextFormField(
+  const CustomTextFormField(
       {Key? key,
       this.alignment,
       this.width,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shimmer/shimmer.dart';
 import '../../../../core/constant/color.dart';
 import '../../presentation/homeScreens/homescreen_controller.dart';
 

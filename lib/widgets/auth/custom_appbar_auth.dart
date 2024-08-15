@@ -3,7 +3,6 @@
 import 'package:eqraa/core/constant/apptheme.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/constant/color.dart';
 
 class CustomAppBarAuth extends StatelessWidget implements PreferredSizeWidget {
   final String title;

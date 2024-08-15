@@ -1,6 +1,5 @@
 import 'package:eqraa/core/app_export.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../core/constant/apptheme.dart';
 import '../core/services/services.dart';
@@ -26,15 +25,15 @@ class DropDownList extends StatelessWidget {
 
       hint: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
-        child: Container(
+        child: SizedBox(
             width: 400,
             child: Text(
               isThemeApp?"145".tr: "144".tr,
               // textAlign: TextAlign.left,
-              style: TextStyle(color: Colors.black),
+              style: const TextStyle(color: Colors.black),
             )),
       ),
-      underline: Divider(
+      underline: const Divider(
         color: Colors.white10,
         thickness: 2,
       ),
@@ -43,16 +42,16 @@ class DropDownList extends StatelessWidget {
         "light",
         "dart"
       ].map((e) => DropdownMenuItem<String>(
-      child: Text(e),
       value: e,
+      child: Text(e),
     ))
          .toList(): [
         "Ar",
         "EN"
       ]
           .map((e) => DropdownMenuItem<String>(
-        child: Text(e),
         value: e,
+        child: Text(e),
       ))
           .toList(),
       borderRadius: BorderRadius.circular(15), onChanged: (String? value) {

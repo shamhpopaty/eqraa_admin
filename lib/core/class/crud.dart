@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:dartz/dartz.dart';
 import 'package:eqraa/data/token_manager.dart';
 import 'package:http/http.dart' as http;
-import '../functions/check_internet.dart';
 import 'status_request.dart';
 
 class Crud {

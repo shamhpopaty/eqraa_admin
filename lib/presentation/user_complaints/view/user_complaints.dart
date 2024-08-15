@@ -25,8 +25,8 @@ class _UserComplaintsState extends State<UserComplaints> {
           final user = userList[index];
 
           return Container(
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: Colors.white,
@@ -34,11 +34,11 @@ class _UserComplaintsState extends State<UserComplaints> {
             child: Row(
               children: [
 
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(user.userName,style: TextStyle(
+                    Text(user.userName,style: const TextStyle(
                         color: Color(0xffA68E74),
                         fontSize: 20,
                         fontWeight: FontWeight.bold

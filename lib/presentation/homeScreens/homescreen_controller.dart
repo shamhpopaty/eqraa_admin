@@ -1,8 +1,5 @@
-import 'package:eqraa/presentation/Auth/view/login.dart';
 import 'package:eqraa/presentation/Auth/view/signup.dart';
 import 'package:eqraa/presentation/My_Profile/view/my_profile.dart';
-import 'package:eqraa/presentation/forgot_password/screens/forgotpassword.dart';
-import 'package:eqraa/presentation/homeScreens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../core/services/services.dart';
@@ -23,8 +20,8 @@ class HomeScreenControllerImp extends HomeScreenController {
   List<Widget> listPage = [
 
 
-    SignUp(),
-    MyProfile(),
+    const SignUp(),
+    const MyProfile(),
 
   ];
 

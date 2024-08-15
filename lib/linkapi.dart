@@ -1,8 +1,6 @@
 class AppLink {
-
-  static const String ip = "localhost";
+  static const String ip = "127.0.0.1";
   static const String server = "http://$ip:8000/api";
-
 
   //============Image=============================
   static const String imageStatic = "";
@@ -25,6 +23,7 @@ class AppLink {
 
   //------home-----
   static const String home = "$server/books/";
+  static const String addBook = "$server/books";
 
   //------profile------
   static const String profile = "$server/";
@@ -37,5 +36,4 @@ class AppLink {
 
   //-----bookscreen-----
   static const String bookscreen = "$server/books?search=category[l]=";
-
 }

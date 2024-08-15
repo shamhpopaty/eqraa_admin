@@ -2,15 +2,14 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../core/app_export.dart';
 
 extension ImageTypeExtension on String {
   ImageType get imageType {
-    if (this.startsWith('http') || this.startsWith('https')) {
+    if (startsWith('http') || startsWith('https')) {
       return ImageType.network;
-    } else if (this.endsWith('.svg')) {
+    } else if (endsWith('.svg')) {
       return ImageType.svg;
-    } else if (this.startsWith('file://')) {
+    } else if (startsWith('file://')) {
       return ImageType.file;
     } else {
       return ImageType.png;
@@ -23,7 +22,7 @@ enum ImageType { svg, png, network, file, unknown }
 // ignore_for_file: must_be_immutable
 class CustomImageView extends StatelessWidget {
   CustomImageView(
-      {this.imagePath,
+      {super.key, this.imagePath,
       this.height,
       this.width,
       this.color,
@@ -106,7 +105,7 @@ class CustomImageView extends StatelessWidget {
     if (imagePath != null) {
       switch (imagePath!.imageType) {
         case ImageType.svg:
-          return Container(
+          return SizedBox(
             height: height,
             width: width,
             child: SvgPicture.asset(
@@ -131,7 +130,7 @@ class CustomImageView extends StatelessWidget {
             fit: fit,
             imageUrl: imagePath!,
             color: color,
-            placeholder: (context, url) => Container(
+            placeholder: (context, url) => SizedBox(
               height: 30,
               width: 30,
               child: LinearProgressIndicator(
@@ -157,6 +156,6 @@ class CustomImageView extends StatelessWidget {
           );
       }
     }
-    return SizedBox();
+    return const SizedBox();
   }
 }

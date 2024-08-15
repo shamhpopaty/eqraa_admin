@@ -63,7 +63,7 @@ class SignUpControllerImp extends SignUpController {
             backgroundColor: AppColor.primaryColor,
             isDismissible: true);
         verifyCodeSignUp();
-      } else  if (StatusRequest.failure == statusRequest){
+      } else if (StatusRequest.failure == statusRequest) {
         print("Email: ");
         print(email.text);
         CoolAlert.show(
@@ -76,7 +76,7 @@ class SignUpControllerImp extends SignUpController {
               statusRequest = StatusRequest.failure;
             });
         statusRequest = StatusRequest.failure;
-      } else  if (StatusRequest.serverFailure == statusRequest){
+      } else if (StatusRequest.serverFailure == statusRequest) {
         print("Email: ");
         print(email.text);
         CoolAlert.show(
@@ -100,7 +100,7 @@ class SignUpControllerImp extends SignUpController {
 
   @override
   toLogin() {
-    Get.offAndToNamed(AppRoutes.login);
+    Get.offNamed(AppRoutes.login);
   }
 
   @override
@@ -211,22 +211,22 @@ class SignUpControllerImp extends SignUpController {
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // if (response['status'] == "success") {
-        Get.back();
-        success();
-      } else {
-        CoolAlert.show(
-            context: Get.overlayContext!,
-            type: CoolAlertType.error,
-            text: "Verify Code Is Not Correct",
-            confirmBtnText: "Try Again",
-            confirmBtnColor: AppColor.primaryColor,
-            onConfirmBtnTap: () {
-              statusRequest = StatusRequest.none;
-              update();
-            });
+      Get.back();
+      success();
+    } else {
+      CoolAlert.show(
+          context: Get.overlayContext!,
+          type: CoolAlertType.error,
+          text: "Verify Code Is Not Correct",
+          confirmBtnText: "Try Again",
+          confirmBtnColor: AppColor.primaryColor,
+          onConfirmBtnTap: () {
+            statusRequest = StatusRequest.none;
+            update();
+          });
 
-        return statusRequest = StatusRequest.none;
-      }
+      return statusRequest = StatusRequest.none;
+    }
 
     update();
   }
@@ -275,7 +275,7 @@ class SignUpControllerImp extends SignUpController {
     );
     await Future.delayed(const Duration(seconds: 2));
     Get.back();
-    await Future.delayed(const Duration(seconds:1));
+    await Future.delayed(const Duration(seconds: 1));
     Get.offNamed(AppRoutes.login);
   }
 }

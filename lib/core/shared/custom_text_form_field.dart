@@ -24,7 +24,7 @@ class CustomTextFormFields extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(top: 15),
       child: TextFormField(
-        style: TextStyle(
+        style: const TextStyle(
           color: AppColor.primaryColor,
           fontSize: 18,
         ),

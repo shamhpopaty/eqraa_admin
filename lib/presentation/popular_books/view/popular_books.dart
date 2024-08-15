@@ -55,8 +55,8 @@ class _PopularBooksPageState extends State<PopularBooksPage> {
               );
             },
             child: Container(
-              margin: EdgeInsets.all(10),
-              padding: EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
@@ -69,7 +69,7 @@ class _PopularBooksPageState extends State<PopularBooksPage> {
                     height: 50,
                     fit: BoxFit.cover,
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   Expanded(
                     child: Text(book.name),
                   ),

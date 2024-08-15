@@ -1,13 +1,11 @@
 // ignore_for_file: avoid_print, unused_local_variable
 
 import 'package:cool_alert/cool_alert.dart';
-import 'package:eqraa/presentation/admin_home/view/admin_home.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:eqraa/presentation/forgot_password/screens/forgotpassword.dart';
 
 import '../../../core/class/handlingdataview.dart';
 import '../../../core/class/status_request.dart';
@@ -17,7 +15,6 @@ import '../../../core/constant/strings.dart';
 import '../../../core/functions/handling_data_controller.dart';
 import '../../../core/services/services.dart';
 import '../../../routes.dart';
-import '../../forgot_password/screens/forgotpassword.dart';
 import '../data/datasource/login_data.dart';
 import '../data/datasource/verifycodesignup_data.dart';
 import '../../../models/user_model.dart';
@@ -111,7 +108,7 @@ class LoginControllerImp extends LoginController {
             Get.offAllNamed(AppRoutes.homePage);
           } else {
             //TODO: Admin Home Page
-            Get.to(() => BookManagerPage());
+            Get.offAllNamed(AppRoutes.homeAdmin);
           }
 
           // Case the account is not verified.

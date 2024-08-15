@@ -1,6 +1,6 @@
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
-import '../app_export.dart'; // These are the Viewport values of your Figma Design.
+// These are the Viewport values of your Figma Design.
 
 // These are used in the code as a reference to create your UI Responsively.
 const num FIGMA_DESIGN_WIDTH = 390;
@@ -24,7 +24,7 @@ extension ResponsiveExtension on num {
 
 extension FormatExtension on double {
   double toDoubleValue({int fractionDigits = 2}) {
-    return double.parse(this.toStringAsFixed(fractionDigits));
+    return double.parse(toStringAsFixed(fractionDigits));
   }
 
   double isNonZero({num defaultValue = 0.0}) {
@@ -70,7 +70,7 @@ class SizeUtils {
   static late double width;
 
   static void setScreenSize() {
-    final mediaQueryData = MediaQueryData.fromWindow(ui.window);
+    final mediaQueryData = MediaQueryData.fromView(ui.window);
     orientation = mediaQueryData.orientation;
     width = mediaQueryData.size.width;
     height = mediaQueryData.size.height;

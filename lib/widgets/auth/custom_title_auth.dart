@@ -1,5 +1,4 @@
 // ignore_for_file: deprecated_member_use
-import 'package:eqraa/core/app_export.dart';
 import 'package:eqraa/core/constant/apptheme.dart';
 import 'package:flutter/material.dart';
 
