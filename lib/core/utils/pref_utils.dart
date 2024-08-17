@@ -1,5 +1,8 @@
+import 'dart:convert';
+import 'dart:ui';
+import 'package:flutter/scheduler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-// ignore_for_file: must_be_immutable
+import '../app_export.dart'; // ignore_for_file: must_be_immutable
 
 // ignore_for_file: must_be_immutable
 class PrefUtils {

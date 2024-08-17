@@ -195,16 +195,33 @@ class MyTranslation extends Translations {
           "158": "اسم الكاتب",
           "159": "الوصف",
           "160": "طلبات الإرسال",
-          "161": "مرحباً بك في قسم المساعدة : برنامجنا يساعدك في تسهيل تجربة القراءة إذا كانت لديك أي شكاوى أو اقتراحات، يُرجى",
+          "161":
+              "مرحباً بك في قسم المساعدة : برنامجنا يساعدك في تسهيل تجربة القراءة إذا كانت لديك أي شكاوى أو اقتراحات، يُرجى",
           "162": "التواصل معنا",
-          "163": "المساعدة",
-
-
-
-
-
-
-
+          "163": "تواصل معنا",
+          "164": "لقد انتهت مدة القراءة هل تريد المتابعة",
+          "165": "ديني",
+          "166": "تاريخي",
+          "167": "دراما",
+          "168": "علمي",
+          "169": "طبخ",
+          "170": "تنمية بشرية",
+          "171": "فلسفة",
+          "172": "رعب",
+          "173": "الملاحظات",
+          "174": "خيالي",
+          "175": "لا يوجد كتب ضمن هذا التصنيف",
+          "176": "لا يوجد كتب في المفضلة",
+          "177": "بحث في العنوان",
+          "178": "ملاحظات",
+          "179": "اكتب",
+          "180": "الغاء",
+          "181": "اسم الكتاب",
+          "182": "اسم الكاتب",
+          "183": "الوصف ",
+          "184": "افتح الكتاب ",
+          "185": "الاصدقاء ",
+          "187": "طلبات الاصدقاء ",
 
 
 
@@ -405,12 +422,33 @@ class MyTranslation extends Translations {
           "158": "WriterBook",
           "159": "Description",
           "160": "SendRequest",
-          "161": "Welcome to the Help Section: Our software helps you to facilitate the reading experience, If you have any complaints or suggestions, please",
+          "161":
+              "Welcome to the Help Section: Our software helps you to facilitate the reading experience, If you have any complaints or suggestions, please",
           "162": "contact us",
           "163": "Helping",
-
-
-
+          "164": "Reading time has expired. Do you want to continue?",
+          "165": "Religious",
+          "166": "History",
+          "167": "Drama",
+          "168": "Scientific",
+          "169": "Cooking",
+          "170": "Personal Development",
+          "171": "Philosophy",
+          "172": "Horror",
+          "173": "Notes",
+          "174": "Fantasy",
+          "175": "No Books In This Category.",
+          "176": "You don't have any favorite book.",
+          "177": "Search",
+          "178": "Notes",
+          "179": "Write",
+          "180": "cancel",
+          "181": "Book Name",
+          "182": "Author name",
+          "183": "Description ",
+          "184": "Open Book ",
+          "185": "Friends ",
+          "187": "recieved request",
 
 
 

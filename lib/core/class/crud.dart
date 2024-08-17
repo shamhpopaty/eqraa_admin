@@ -59,9 +59,9 @@ class Crud {
   // }
   final TokenManager tokenManager = TokenManager();
   Future<Either<StatusRequest, dynamic>> getDataWithToken(
-      String linkurl,
-      String bearerToken,
-      ) async {
+    String linkurl,
+    String bearerToken,
+  ) async {
     try {
       String accessToken = await TokenManager().accessToken;
       var response = await http.get(
@@ -91,10 +91,10 @@ class Crud {
   }
 
   Future<Either<StatusRequest, Map>> deleteDataWithToken(
-      String linkurl, {
-        Map<String, dynamic>?
+    String linkurl, {
+    Map<String, dynamic>?
         body, // Optional body parameter for the DELETE request
-      }) async {
+  }) async {
     try {
       String accessToken = await TokenManager().accessToken;
 
@@ -128,11 +128,11 @@ class Crud {
   }
 
   Future<Either<StatusRequest, Map>> postDataWithToken(
-      String linkurl,
-      String bearerToken,
-      Map<String, dynamic>
-      body, // Add an optional body parameter for POST requests
-      ) async {
+    String linkurl,
+    String bearerToken,
+    Map<String, dynamic>
+        body, // Add an optional body parameter for POST requests
+  ) async {
     try {
       String accessToken = await TokenManager().accessToken;
       var response = await http.post(
@@ -163,9 +163,9 @@ class Crud {
 }
 
 Future<Either<StatusRequest, Map>> get(
-    String linkurl,
-    String? bearerToken,
-    ) async {
+  String linkurl,
+  String? bearerToken,
+) async {
   try {
     var response = await http.get(
       Uri.parse(linkurl),
@@ -194,11 +194,11 @@ Future<Either<StatusRequest, Map>> get(
 }
 
 Future<Either<StatusRequest, Map>> post(
-    String linkurl,
-    String bearerToken, {
-      Map<String, dynamic>?
+  String linkurl,
+  String bearerToken, {
+  Map<String, dynamic>?
       body, // Add an optional body parameter for POST requests
-    }) async {
+}) async {
   try {
     var response = await http.post(
       Uri.parse(linkurl),

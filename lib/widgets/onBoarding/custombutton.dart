@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:eqraa/core/app_export.dart';
 
+import '../../core/constant/imageassets.dart';
 import '../../presentation/on_boarding/onboarding_controller.dart';
 import '../../../core/constant/color.dart';
 

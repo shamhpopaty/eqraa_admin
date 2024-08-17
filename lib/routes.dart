@@ -1,11 +1,11 @@
 import 'package:eqraa/presentation/Auth/view/signup.dart';
-import 'package:eqraa/presentation/My_Profile/view/my_profile.dart';
+
 import 'package:eqraa/presentation/admin_home/view/admin_home.dart';
 import 'package:eqraa/presentation/forgot_password/screens/forgotpassword.dart';
 import 'package:eqraa/presentation/forgot_password/screens/resetpassword.dart';
 import 'package:eqraa/presentation/forgot_password/screens/successresetpassword.dart';
 import 'package:eqraa/presentation/forgot_password/screens/verifycode.dart';
-import 'package:eqraa/widgets/custom_editing_profile.dart';
+
 import 'package:get/get.dart';
 import 'package:eqraa/presentation/Auth/view/login.dart';
 import 'package:eqraa/presentation/on_boarding/onboarding.dart';
@@ -54,7 +54,7 @@ List<GetPage<dynamic>>? routes = [
     page: () => const SignUp(),
   ),
   //HomePage
-  GetPage(name: AppRoutes.homePage, page: () => const HomeScreen()),
+  GetPage(name: AppRoutes.homePage, page: () => const BookManagerPage()),
   GetPage(name: AppRoutes.homeAdmin, page: () =>  const BookManagerPage()),
   GetPage(name: AppRoutes.resetPassword, page: () => const ResetPassword()),
   GetPage(
@@ -62,8 +62,8 @@ List<GetPage<dynamic>>? routes = [
       page: () => const SuccessResetPassword()),
   GetPage(name: AppRoutes.verifyCode, page: () => const VerifyCode()),
   GetPage(name: AppRoutes.forgotPassword, page: () => const ForgotPassword()),
-  GetPage(name: AppRoutes.myprofile, page: () => const MyProfile()),
-  GetPage(name: AppRoutes.editigprofile, page: () => EditProfile()),
+
+
   //GetPage(name: AppRoutes.showbook, page: () =>   ShowBook (pdfPath: '',)),
 
   GetPage(

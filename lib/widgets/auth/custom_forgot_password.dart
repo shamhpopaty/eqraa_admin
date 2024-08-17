@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:eqraa/core/app_export.dart';
 
+import '../../../core/constant/color.dart';
 import '../../core/constant/apptheme.dart';
 
 class CustomForgotPassword extends StatelessWidget {

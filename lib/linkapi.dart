@@ -1,6 +1,7 @@
 class AppLink {
   static const String ip = "192.168.43.202";
   static const String server = "http://$ip:8000/api";
+  static const String baseServer = "http://$ip:8000";
 
   //============Image=============================
   static const String imageStatic = "";
@@ -35,7 +36,40 @@ class AppLink {
   static const String descriptionbook = "$server/";
 
   //-----bookscreen-----
-  static const String bookscreen = "$server/books?search=category[l]=";
+  static const String bookscreen = "$server/books/?category[eq]=";
   static const String complaintsScreen = "$server/complaints";
+
+
+
+  static const String notesscreen = "$server/";
+  static String rateBooks(int id) {
+    return "$server/books/$id/rate";
+  }
+
+
+  static const String addBookMark = '$server/bookmarks';
+  static const String getBookMark='$server/bookmarks';
+  static String addFavoriteBook(int id) {
+    return '$server/books/$id/add-to-favorite';
+  }
+  static const String getfavoritebook='$server/books/my-favorite';
+  static String removeFavoriteBook(int id) {
+    return '$server/books/$id/remove-from-favorite';
+  }
+
+  static String saveHighestPage(int id) {
+    return '$server/books/$id/read';
+  }
+  static const String addcomplaints='$server/complaints';
+  static const String friends='$server/users/friendship/my-friends';
+  static const String sendrequest='$server/users/friendship/send-friend-request';
+  static const String recievedrequest='$server/users/friendship/received-friend-requests';
+  static const String getbookmarks='$server/bookmarks';
+  static String removebookmark(int id) {
+    return '$server/bookmarks/$id';
+  }
+  static String myprofile(int id) {
+    return '$server/users/$id';
+  }
 
 }

@@ -3,19 +3,19 @@ import 'package:flutter/material.dart';
 import '../core/constant/color.dart';
 
 Widget container_profile(IconData icon, String containerName, IconData endicon,)=>
-  SizedBox(
+  Container(
     height: 50,
     width: 400,
     child: Row(
       children: [
         Icon(icon),
-        const SizedBox(width: 10,),
-        Text(containerName,
-          style: const TextStyle(
+        SizedBox(width: 10,),
+        Text('$containerName',
+          style: TextStyle(
               color: AppColor.black,
               fontWeight: FontWeight.bold
           ),),
-        const SizedBox(width: 230,),
+        SizedBox(width: 230,),
         IconButton(onPressed: (){},
             icon: Icon(endicon))
       ],
@@ -24,57 +24,59 @@ Widget container_profile(IconData icon, String containerName, IconData endicon,)
 
 
 Widget container_profile2(IconData icon, String containerName, int number)=>
-    SizedBox(
+    Container(
       height: 50,
       width: 400,
       child: Row(
         children: [
           Icon(icon),
-          const SizedBox(width: 10,),
-          Text(containerName,
-            style: const TextStyle(
+          SizedBox(width: 10,),
+          Text('$containerName',
+            style: TextStyle(
                 color: AppColor.black,
                 fontWeight: FontWeight.bold
             ),),
-          const SizedBox(width:180 ),
+          Spacer(),
          Text("$number"),
+          SizedBox(width: 15,),
         ],
       ),
     );
 
 Widget container_profile3(IconData icon, String containerName, int number)=>
-    SizedBox(
+    Container(
       height: 50,
       width: 400,
       child: Row(
         children: [
           Icon(icon),
-          const SizedBox(width: 10,),
-          Text(containerName,
-            style: const TextStyle(
+          SizedBox(width: 10,),
+          Text('$containerName',
+            style: TextStyle(
                 color: AppColor.black,
                 fontWeight: FontWeight.bold
             ),),
-          const SizedBox(width:125 ),
+         Spacer(),
           Text("$number"),
+          SizedBox(width: 15,)
         ],
       ),
     );
 
 Widget container_profile4(IconData icon, String containerName, IconData endicon,)=>
-    SizedBox(
+    Container(
       height: 50,
       width: 400,
       child: Row(
         children: [
           Icon(icon),
-          const SizedBox(width: 10,),
-          Text(containerName,
-            style: const TextStyle(
+          SizedBox(width: 10,),
+          Text('$containerName',
+            style: TextStyle(
                 color: AppColor.black,
                 fontWeight: FontWeight.bold
             ),),
-          const SizedBox(width: 220,),
+          SizedBox(width: 220,),
           IconButton(onPressed: (){},
               icon: Icon(endicon))
         ],

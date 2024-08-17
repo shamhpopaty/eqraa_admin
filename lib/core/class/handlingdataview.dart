@@ -5,19 +5,21 @@ import 'package:shimmer/shimmer.dart';
 
 import '../constant/color.dart';
 import '../constant/imageassets.dart';
+import '../localization/changelocal.dart';
 import 'status_request.dart';
 
 class HandlingDataView extends StatelessWidget {
   final StatusRequest statusRequest;
   final Widget widget;
   final bool? shimmer;
+  final String? text;
   final double? width;
   final double? height;
   final double? imageWidth;
   final double? imageHeight;
   final void Function()? onOffline;
 
-  const HandlingDataView({
+ HandlingDataView({
     super.key,
     required this.statusRequest,
     required this.widget,
@@ -26,8 +28,10 @@ class HandlingDataView extends StatelessWidget {
     this.imageHeight,
     this.imageWidth,
     this.onOffline,
-    this.shimmer,
+    this.shimmer, this.text,
   });
+  LocaleController localController = Get.put(LocaleController());
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -39,8 +43,9 @@ class HandlingDataView extends StatelessWidget {
             child: Center(
               child: shimmer == true
                   ? Shimmer.fromColors(
-                      baseColor: AppColor.primaryColor,
-                      highlightColor: AppColor.secondColor,
+                      baseColor:(!localController.isDark)? AppColor.primaryColor:AppColor.primaryColorDark,
+
+                highlightColor:(!localController.isDark)? AppColor.fourthColor:AppColor.primaryColorDark,
                       child: widget)
                   : Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -73,7 +78,8 @@ class HandlingDataView extends StatelessWidget {
                     Center(child: Lottie.asset(AppImageAssets.offline)),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColor.primaryColor),
+                          backgroundColor:(!localController.isDark)? AppColor.primaryColor:AppColor.primaryColorDark,
+    ),
                       onPressed: onOffline,
                       child: const Icon(
                         Icons.refresh_outlined,
@@ -108,7 +114,33 @@ class HandlingDataView extends StatelessWidget {
                         ),
                       ],
                     ),
-                  )
+                  ):
+    statusRequest == StatusRequest.empty
+        ? SizedBox(
+      height: height,
+      width: width,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Text(text??"49".tr),
+          ),
+          Center(
+            child: Lottie.asset(AppImageAssets.noData,
+                repeat: false),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                backgroundColor: AppColor.primaryColor),
+            onPressed: onOffline,
+            child: const Icon(
+              Icons.refresh_outlined,
+              color: AppColor.white,
+            ),
+          ),
+        ],
+      ),
+    )
                 : statusRequest == StatusRequest.serverFailure
                     ? Center(
                         child: Lottie.asset(AppImageAssets.server),

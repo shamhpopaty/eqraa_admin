@@ -1,5 +1,4 @@
-import 'package:eqraa/presentation/Auth/view/signup.dart';
-import 'package:eqraa/presentation/My_Profile/view/my_profile.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../core/services/services.dart';
@@ -20,9 +19,11 @@ class HomeScreenControllerImp extends HomeScreenController {
   List<Widget> listPage = [
 
 
-    const SignUp(),
-    const MyProfile(),
 
+ Text("ssss"),
+ Text("ssss"),
+ Text("ssss"),
+ Text("ssss"),
   ];
 
   List bottomAppBar = [

@@ -18,17 +18,21 @@ class MyServices extends GetxService {
     return this;
   }
 
-  setUserID(String id) {
+  setUserID(String id){
     return sharedPreferences.setString("id", id);
-  }
 
-  getUserID() {
-    return sharedPreferences.getString("id");
   }
+  getUserID(){
+   return sharedPreferences.getString("id");
 
-  getToken() {
-    return sharedPreferences.getString("token");
   }
+  getBookID(){
+    return sharedPreferences.getString("bookID");
+
+  }
+getToken(){
+  return sharedPreferences.getString("token");
+}
 }
 
 initialServices() async {

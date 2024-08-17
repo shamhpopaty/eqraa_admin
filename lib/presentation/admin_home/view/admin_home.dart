@@ -59,12 +59,12 @@ class _BookManagerPageState extends State<BookManagerPage> {
             ],
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: [
-            CategoriesPage(),
-            const AddBookPage(),
-            const PopularBooksPage(),
-            const Complaints_Screen(),
+            Classification(),
+            AddBookPage(),
+            PopularBooksPage(),
+            Complaints_Screen(),
           ],
         ),
       ),
