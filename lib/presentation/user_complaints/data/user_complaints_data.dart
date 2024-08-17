@@ -8,7 +8,7 @@ class ComplaintsData {
 
   /// you just need to use the link, and to insert the form data
   getData() async {
-    var response = await crud.postData(AppLink.complaintsScreen, {});
+    var response = await crud.getDataWithToken(AppLink.complaintsScreen,"");
     return response.fold((l) => l, (r) => r);
   }
 }

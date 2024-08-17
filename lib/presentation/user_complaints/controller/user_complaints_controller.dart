@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:eqraa/linkapi.dart';
 import 'package:get/get.dart';
 
 import '../../../core/class/status_request.dart';
@@ -39,7 +40,7 @@ class ComplaintsController extends GetxController {
     String accessToken = await TokenManager().accessToken;
 
     var response = await http.get(
-      Uri.parse('http://127.0.0.1:8000/api/bookmarks'),
+      Uri.parse(AppLink.complaintsScreen),
       headers: {
         "Accept": "application/json",
         'Authorization': 'Bearer $accessToken',

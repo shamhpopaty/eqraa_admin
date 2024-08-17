@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:dartz/dartz.dart';
 import 'package:eqraa/data/token_manager.dart';
 import 'package:http/http.dart' as http;
+import '../functions/check_internet.dart';
 import 'status_request.dart';
 
 class Crud {
@@ -57,24 +58,26 @@ class Crud {
   // }
   // }
   final TokenManager tokenManager = TokenManager();
-  Future<Either<StatusRequest, Map>> getDataWithToken(
-    String linkurl,
-    String bearerToken,
-  ) async {
+  Future<Either<StatusRequest, dynamic>> getDataWithToken(
+      String linkurl,
+      String bearerToken,
+      ) async {
     try {
+      String accessToken = await TokenManager().accessToken;
       var response = await http.get(
         Uri.parse(linkurl),
         headers: {
           // 'Content-Type': 'application/json',
-          'Authorization': 'Bearer 3|ikJMh029jho1KjTZme0mUd9LbNxYhFvBgcrYnO5Cb7fa12be',
+          'Authorization': 'Bearer $accessToken',
           // 'Authorization': 'Bearer ${tokenManager.accessToken?? bearerToken}',
         },
       );
-
+      print("URL : $linkurl");
       print('Response Status Code: ${response.statusCode}');
+      print('Response body: ${response.body}');
 
       if (response.statusCode == 200 || response.statusCode == 201) {
-        Map responsebody = jsonDecode(response.body);
+        var responsebody = jsonDecode(response.body);
         print('Response Body: $responsebody');
         return Right(responsebody);
       } else {
@@ -87,23 +90,62 @@ class Crud {
     }
   }
 
-  Future<Either<StatusRequest, Map>> postDataWithToken(
-    String linkurl,
-    String bearerToken, {
-    Map<String, dynamic>?
-        body, // Add an optional body parameter for POST requests
-  }) async {
+  Future<Either<StatusRequest, Map>> deleteDataWithToken(
+      String linkurl, {
+        Map<String, dynamic>?
+        body, // Optional body parameter for the DELETE request
+      }) async {
     try {
+      String accessToken = await TokenManager().accessToken;
+
+      var response = await http.delete(
+        Uri.parse(linkurl),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer $accessToken',
+        },
+        body: body != null
+            ? jsonEncode(body)
+            : null, // Encode the body as JSON if provided
+      );
+      print("URL : $linkurl");
+      print('Response Status Code: ${response.statusCode}');
+
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        Map responsebody = jsonDecode(response.body);
+        print('Response Body: $responsebody');
+        return Right(responsebody);
+      } else if (response.statusCode == 400) {
+        return const Left(StatusRequest.failure);
+      } else {
+        print('Error: Server Failure');
+        return const Left(StatusRequest.serverFailure);
+      }
+    } catch (e) {
+      print('Error: $e');
+      return const Left(StatusRequest.failure);
+    }
+  }
+
+  Future<Either<StatusRequest, Map>> postDataWithToken(
+      String linkurl,
+      String bearerToken,
+      Map<String, dynamic>
+      body, // Add an optional body parameter for POST requests
+      ) async {
+    try {
+      String accessToken = await TokenManager().accessToken;
       var response = await http.post(
         Uri.parse(linkurl),
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer $bearerToken',
+          'Authorization': 'Bearer $accessToken',
         },
         body: jsonEncode(body), // Encode the body as JSON
       );
-
+      print("URL : $linkurl");
       print('Response Status Code: ${response.statusCode}');
+      print('Response Body: ${response.body}');
 
       if (response.statusCode == 200 || response.statusCode == 201) {
         Map responsebody = jsonDecode(response.body);
@@ -121,9 +163,9 @@ class Crud {
 }
 
 Future<Either<StatusRequest, Map>> get(
-  String linkurl,
-  String? bearerToken,
-) async {
+    String linkurl,
+    String? bearerToken,
+    ) async {
   try {
     var response = await http.get(
       Uri.parse(linkurl),
@@ -152,11 +194,11 @@ Future<Either<StatusRequest, Map>> get(
 }
 
 Future<Either<StatusRequest, Map>> post(
-  String linkurl,
-  String bearerToken, {
-  Map<String, dynamic>?
+    String linkurl,
+    String bearerToken, {
+      Map<String, dynamic>?
       body, // Add an optional body parameter for POST requests
-}) async {
+    }) async {
   try {
     var response = await http.post(
       Uri.parse(linkurl),

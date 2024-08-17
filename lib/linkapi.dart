@@ -1,5 +1,5 @@
 class AppLink {
-  static const String ip = "127.0.0.1";
+  static const String ip = "192.168.43.202";
   static const String server = "http://$ip:8000/api";
 
   //============Image=============================

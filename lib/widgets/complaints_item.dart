@@ -24,10 +24,11 @@ class ComplaintsItem extends StatelessWidget {
       child: Column(
         children: [
           ListTile(
+            trailing: Text("Created At:${complaint.createdAt.toString()}"),
             title: Text(
-              complaint.userId as String, // عرض اسم الملاحظة
+              complaint.userId.toString(), // عرض اسم الملاحظة
               style: TextStyle(
-                color: (Colors.white),
+                color: (Colors.black),
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
               ),
